@@ -1,6 +1,5 @@
-package com.in28minutest.junit.helper;
+package helper;
 
-import com.in28minutes.junit.helper.StringHelper;
 import org.junit.Before;
 import org.junit.Test;
 

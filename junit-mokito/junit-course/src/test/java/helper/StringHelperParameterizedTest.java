@@ -1,6 +1,5 @@
-package com.in28minutest.junit.helper;
+package helper;
 
-import com.in28minutes.junit.helper.StringHelper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,22 +8,24 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class StringHelperParameterized2Test {
+public class StringHelperParameterizedTest {
 
     //AACD => CD ACD => CD CDEF => CDEF CDAA => CDAA
     private StringHelper stringHelper;
     private String input;
+    private String expectedOutput;
 
-    public StringHelperParameterized2Test(String input) {
+    public StringHelperParameterizedTest(String input, String expectedOutput) {
         this.input = input;
+        this.expectedOutput = expectedOutput;
     }
 
     @Parameterized.Parameters
     public static Collection testConditions(){
-        String expectedOutputs [] [] = {{"AAA"}, {"ACD"}, {"ABAB"}};
+        String expectedOutputs [] [] = {{"AAD", "CD"}, {"ACD", "CD"}, {"ABAB", "daskash"}};
 
         return Arrays.asList(expectedOutputs);
     }
@@ -34,9 +35,8 @@ public class StringHelperParameterized2Test {
         stringHelper = new StringHelper();
     }
 
-
     @Test
-    public void tesTareFirstAndLastTwoCharactersTheSame(){
-        assertTrue(stringHelper.areFirstAndLastTwoCharactersTheSame(input));
+    public void testTruncateAInFirst2Positions(){
+        assertEquals(expectedOutput, stringHelper.truncateAInFirst2Positions(input));
     }
 }

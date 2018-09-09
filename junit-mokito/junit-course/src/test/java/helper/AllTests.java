@@ -1,4 +1,4 @@
-package com.in28minutest.junit.helper;
+package helper;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

@@ -1,4 +1,4 @@
-package com.in28minutes.junit.helper;
+package helper;
 
 public class StringHelper {
 

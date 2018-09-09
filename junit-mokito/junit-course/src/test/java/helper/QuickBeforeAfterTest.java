@@ -1,4 +1,4 @@
-package com.in28minutest.junit.helper;
+package helper;
 
 import org.junit.After;
 import org.junit.AfterClass;
