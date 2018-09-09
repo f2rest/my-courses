@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <parent>
         <groupId>com.f2rest.courses</groupId>
         <artifactId>JunitMockitoCourse</artifactId>
@@ -9,14 +10,15 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.f2rest.courses.junit</groupId>
-    <artifactId>JunitCourse</artifactId>
+    <groupId>com.f2rest.courses.mockito</groupId>
+    <artifactId>MockitoCourse</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>
