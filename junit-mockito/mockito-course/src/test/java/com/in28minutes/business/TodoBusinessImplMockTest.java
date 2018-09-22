@@ -1,6 +1,8 @@
 package com.in28minutes.business;
 
 import com.in28munites.data.api.TodoService;
+import org.hamcrest.core.Is;
+import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -8,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 
 public class TodoBusinessImplMockTest {
@@ -40,5 +43,26 @@ public class TodoBusinessImplMockTest {
 
         List<String> expectedValues = Arrays.asList();
         assertEquals(expectedValues, filteredTodos);
+    }
+
+    @Test
+    public void testRetriveTodosRelatedToSpring_usingBDD() {
+
+        //Given
+        TodoService todoServiceMock = mock(TodoService.class);
+        List<String> todos = Arrays.asList("Learn Spring MVC" , "Learn Spring", "Learn to Dance");
+
+        given(todoServiceMock.retriveTodos("Dummy")).willReturn(todos);
+
+        List<String> expectedValues = Arrays.asList("Learn Spring MVC" , "Learn Spring");
+
+        TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
+
+        //When
+        List<String> filteredTodos = todoBusinessImpl.retriveTodosRelatedToSpring("Dummy");
+
+        //Then
+        Assert.assertThat(filteredTodos.size(), Is.is(2));
+        Assert.assertThat(expectedValues, Is.is(filteredTodos));
     }
 }
