@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/junit-course/pom.xml" />
         <option value="$PROJECT_DIR$/mockito-course/pom.xml" />
+        <option value="$PROJECT_DIR$/power-mockito-course/pom.xml" />
       </list>
     </option>
   </component>

@@ -11,6 +11,7 @@
     <modules>
         <module>junit-course</module>
         <module>mockito-course</module>
+        <module>power-mockito-course</module>
     </modules>
 
     <properties>
