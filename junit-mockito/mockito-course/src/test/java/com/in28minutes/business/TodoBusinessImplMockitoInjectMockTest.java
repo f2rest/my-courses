@@ -3,14 +3,15 @@ package com.in28minutes.business;
 import com.in28munites.data.api.TodoService;
 import org.hamcrest.core.Is;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,8 +23,11 @@ import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 
-@RunWith(MockitoJUnitRunner.class)
 public class TodoBusinessImplMockitoInjectMockTest {
+    // We chan have multiples rules
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
+
     @Mock
     TodoService todoServiceMock;
 
