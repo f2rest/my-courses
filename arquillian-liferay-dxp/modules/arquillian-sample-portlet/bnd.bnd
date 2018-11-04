@@ -1,0 +1,4 @@
+Bundle-Name: arquillian-sample-portlet
+Bundle-SymbolicName: com.liferay.arquillian.sample
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.arquillian.sample.constants
